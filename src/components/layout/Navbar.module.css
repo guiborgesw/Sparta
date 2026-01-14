@@ -1,0 +1,34 @@
+.navbar {
+    background-color: var(--gray-900);
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.iconImage {
+    width: 7rem;
+    margin-left: 20rem;
+}
+
+.itemList {
+    display: flex;
+    margin-left: 60rem;
+}
+
+.item {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.item a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: var(--yellow-500);
+}

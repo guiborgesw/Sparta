@@ -1,0 +1,35 @@
+:root {
+  --primary-500: #14375A;
+  --primary-300: #2A75C0;
+
+  --secondary-500: #4279a8;
+  --secondary-300: #23609E;
+  --secondary-100: #1B4C7C;
+
+  --details-500: #C8902A;
+  --details-300: #A58756;
+  --details-100: #54697A;
+
+  --gray-900: #3A4044;
+  --gray-300: #504B44;
+  --gray-100: #C5C5C5;
+
+  --red-500: #F75A68;
+
+  --white: #FFF;
+  --black: #000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, 
+body, 
+#root {
+  background-color: #efefef;
+  height: 100%;
+}

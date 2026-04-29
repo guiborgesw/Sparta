@@ -1,0 +1,46 @@
+.alignment {
+    display: flex;
+    justify-content: center;
+    line-height: 1.6;
+    padding-top: 2.5rem;
+}
+
+.firstTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2.5rem;
+    font-family: 'DM Serif Display', sans-serif;
+}
+
+.titleDetails {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family: 'DM Serif Display', sans-serif;
+    color: var(--details-100);
+}
+
+.quoteWrapper {
+    position: absolute;   /* sai do fluxo e fica no canto */
+    width: 280px;
+}
+
+.containerList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-500);
+    width: 40rem;
+    height: auto;
+    margin-top: 3rem;
+    margin-left: 40rem;
+    border-radius: 0.7rem;
+}
+
+.containerList h2 {
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}

@@ -1,0 +1,15 @@
+.dailyQuote {
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    justify-content: center;
+    background-color: var(--primary-500);
+    color: var(--white);
+    font-family: 'DM Serif Display', sans-serif;
+    width: 24rem;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    line-height: 1.6;
+    border-radius: 1rem;
+    margin-left: 3rem;
+}

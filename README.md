@@ -1,52 +1,51 @@
 # 🏛️ Sparta — Habit Tracker
 
-> Transforme seus hábitos em conquistas diárias com o Desafio Sparta.
+> Turn your habits into daily achievements with the Sparta Challenge.
 
 ![Preview](./preview.png)
 
-## 📌 Sobre o Projeto
+## 📌 About the Project
 
-O **Sparta** é uma aplicação web de rastreamento de hábitos inspirada na disciplina espartana, focada em consistência, evolução pessoal e execução diária.
+**Sparta** is a habit tracking web application inspired by Spartan discipline, focused on consistency, personal growth, and daily execution.
 
-### Funcionalidades
-- ✅ Crie e gerencie hábitos personalizados
-- 📅 Marque sua consistência com um calendário interativo
-- 💬 Receba frases motivacionais diárias
+### Features
 
-## 🚀 Tecnologias Utilizadas
+- ✅ Create and manage personalized habits  
+- 📅 Track your consistency with an interactive calendar  
+- 💬 Receive daily motivational quotes
 
-- **React.js** — construção da interface baseada em componentes
-- **JavaScript (ES6+)** — lógica e manipulação de estado
-- **CSS3** — estilização com identidade visual personalizada
+## 🚀 Technologies
 
-## 🔜 Em Desenvolvimento
+- **React.js** — component-based UI development  
+- **JavaScript (ES6+)** — application logic and state management  
+- **CSS Modules** — custom styling with a unique visual identity  
 
-- [ ] Seção de rankings com os usuários
-- [ ] Seção de evolução e progresso
-- [ ] Back-end
-- [ ] Banco de dados
-- [ ] Autenticação de usuários 
-- [ ] Deploy na nuvem
+## 🔜 In Development
 
-## 💻 Como Rodar Localmente
+- [ ] User ranking system  
+- [ ] Progress and analytics section  
+- [ ] Back-end  
+- [ ] Database  
+- [ ] User authentication  
+- [ ] Cloud deployment  
+
+## 💻 Running Locally
 
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/guiborgesw/Sparta.git
 
-# Acesse a pasta do projeto
+# Navigate to the project folder
 cd Sparta
 
-# Instale as dependências
+# Install dependencies
 yarn install
 
-# Inicie o servidor de desenvolvimento
+# Start the development server
 yarn start
 ```
 
-Acesse em: `http://localhost:3000`
+Access at: `http://localhost:3000`
 
-## 👨‍💻 Autor
-
-**Guilherme Borges**
+## 👨‍💻 Author **Guilherme Borges**
 - LinkedIn: [linkedin.com/in/guiborgesw](https://www.linkedin.com/in/guiborgesw)

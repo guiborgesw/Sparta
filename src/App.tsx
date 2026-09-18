@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Home from './components/pages/Home/index.jsx'
-import Evolution from './components/pages/Evolution/index.jsx'
-import Navbar from './components/layout/Navbar/index.jsx'
+import Home from './components/pages/Home/index'
+import Evolution from './components/pages/Evolution/index'
+import Navbar from './components/layout/Navbar/index'
 
 export default function App() {
   return (

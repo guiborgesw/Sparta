@@ -2,7 +2,7 @@ import { RocketLaunch, Trash } from '@phosphor-icons/react'
 import styles from '../Container/Container.module.css'
 import { useState } from 'react'
 
-export default function Container({ content }) {
+export default function Container() {
     
     const [habits, setHabits] = useState([])
 

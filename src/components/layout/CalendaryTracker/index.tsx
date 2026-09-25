@@ -1,13 +1,15 @@
-import styles from './Calendar.css'
 import Calendar from 'react-calendar';
+import './Calendar.css';
 import 'react-calendar/dist/Calendar.css';
 import { useState } from "react";
 
+import type { MarkedDays } from '../../../types/habits'
+
 export default function CalendarTracker() {
 
-    const [markedDays, setMarkedDays] = useState({});
+    const [markedDays, setMarkedDays] = useState<MarkedDays>({});
 
-    function handleDay(date) {
+    function handleDay(date: Date) {    
         const key = toKey(date.getFullYear(), date.getMonth(), date.getDate());
 
         setMarkedDays(prev => {
@@ -17,7 +19,7 @@ export default function CalendarTracker() {
         });
     }
 
-    function toKey(year, month, day) {
+    function toKey(year: number, month: number, day: number) {
         return (
             `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`
         )

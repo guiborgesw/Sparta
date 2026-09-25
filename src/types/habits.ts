@@ -1,9 +1,7 @@
-export interface Habits {
+export interface Habit {
     id: string
     name: string
     done: boolean
 }
 
-export interface MarkedDays {
-    Record<string, boolean>
-}
+export type MarkedDays = Record<string, boolean>

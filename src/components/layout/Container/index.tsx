@@ -1,25 +1,34 @@
 import { RocketLaunch, Trash } from '@phosphor-icons/react'
 import styles from '../Container/Container.module.css'
-import { useState } from 'react'
+import { useState, type FormEvent, type ChangeEvent } from 'react'
 
-export default function Container({ content }) {
+import type { Habit } from '../../../types/habits'
+
+export default function Container() {
     
-    const [habits, setHabits] = useState([])
+    const [habits, setHabits] = useState<Habit[]>([])
 
     const [newHabitText, setNewHabitText] = useState('')
 
-    function handleCreateNewHabit(event) {
+    function handleCreateNewHabit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         if (!newHabitText.trim()) return
-        setHabits([...habits, newHabitText]);
+
+        const newHabit: Habit = {
+            id: crypto.randomUUID(),
+            name: newHabitText,
+            done: false
+        }
+
+        setHabits([...habits, newHabit]);
         setNewHabitText('');
     }
 
-    function handleNewHabitChange(event) {
+    function handleNewHabitChange(event: ChangeEvent<HTMLInputElement>) {
         setNewHabitText(event.target.value);
     }
 
-    function handleDeleteHabit(index) {
+    function handleDeleteHabit(index: number) {
         setHabits(habits.filter((_, i) => i !== index));
     }
 
@@ -31,7 +40,7 @@ export default function Container({ content }) {
                     <input
                         className={styles.writeYourHabit}
                         type="text"
-                        text="Nome do hábito"
+                        title="Nome do hábito"
                         name="habitos"
                         placeholder="Adicione um novo hábito"
                         value={newHabitText}
@@ -45,11 +54,11 @@ export default function Container({ content }) {
 
             <section>
                 <div className={styles.listToDo}>
-                    {habits.map((habits, index) => (
+                    {habits.map((habit, index) => (
                         <div key={index}>
                             <header className={styles.listContent}>
                                 <input type="checkbox"/>
-                                <p>{habits}</p>
+                                <p>{habit.name}</p>
                                 <div className={styles.listLine}>
                                     <button 
                                         title="Deletar Hábito"

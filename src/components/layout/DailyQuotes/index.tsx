@@ -6,7 +6,7 @@ function getDailyQuote() {
   const today = new Date();
 
   const dayOfYear = Math.floor(
-    (today - new Date(today.getFullYear(), 0, 0)) / 86400000
+    (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000
   );
   return quotes[dayOfYear % quotes.length];
 }

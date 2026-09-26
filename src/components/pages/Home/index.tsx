@@ -1,7 +1,7 @@
 import styles from './Home.module.css'
 import Container from '../../layout/Container/index'
 import DailyQuote from '../../layout/DailyQuotes/index'
-import { RocketLaunch } from '@phosphor-icons/react'
+import CalendarTracker from '../../layout/CalendaryTracker'
 
 export default function Home() {
     return (
@@ -11,21 +11,16 @@ export default function Home() {
                     <div className={styles.titleDetails}>Sparta!</div>
                 </h1>
             </div>
-
-                <div>
-                    <div className={styles.quoteWrapper}>
-                        <DailyQuote />
-                    </div>
-                    <div>
-
-                    </div>
-                    <div className={styles.containerList}>
-                        <Container />
-                    </div>
+            <div className={styles.pageContent}>
+                <div className={styles.leftColumn}>
+                    <DailyQuote />
+                    <CalendarTracker />
                 </div>
-            <footer>
-                
-            </footer>
+
+                <div className={styles.rightColumn}>
+                    <Container />
+                </div>
+            </div>
         </main>
     )
 }

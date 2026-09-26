@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/REVIEW_TASKS.html
+/REVIEW_TASKS.md

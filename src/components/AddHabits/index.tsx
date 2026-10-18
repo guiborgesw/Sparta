@@ -1,13 +1,12 @@
 import { RocketLaunch, Trash } from '@phosphor-icons/react'
-import styles from '../Container/Container.module.css'
-import { useState, type FormEvent, type ChangeEvent } from 'react'
+import styles from './AddHabits.module.css'
+import { useState, type FormEvent, type ChangeEvent, useEffect } from 'react'
 
-import type { Habit } from '../../../types/habits'
+import type { Habit } from '../../@types/habits'
 
-export default function Container() {
+export default function AddHabits() {
     
     const [habits, setHabits] = useState<Habit[]>([])
-
     const [newHabitText, setNewHabitText] = useState('')
 
     function handleCreateNewHabit(event: FormEvent<HTMLFormElement>) {

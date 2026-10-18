@@ -1,7 +1,7 @@
 import styles from './Home.module.css'
-import Container from '../../layout/Container/index'
-import DailyQuote from '../../layout/DailyQuotes/index'
-import CalendarTracker from '../../layout/CalendaryTracker'
+import AddHabits from '../../components/AddHabits/index'
+import DailyQuote from '../../components/DailyQuotes/index'
+import CalendarTracker from '../../components/CalendarTracker/index'
 
 export default function Home() {
     return (
@@ -18,7 +18,7 @@ export default function Home() {
                 </div>
 
                 <div className={styles.rightColumn}>
-                    <Container />
+                    <AddHabits />
                 </div>
             </div>
         </main>

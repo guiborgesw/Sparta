@@ -4,4 +4,4 @@ export interface Habit {
     done: boolean
 }
 
-export type MarkedDays = Record<string, boolean>
+export type MarkedDays = Record<string, boolean> 

@@ -1,7 +1,6 @@
 import styles from './Navbar.module.css';
-import Sparta from '../../../assets/Logo_Sparta.png'
+import Sparta from '../../assets/Logo_Sparta.png';
 import { Link } from 'react-router-dom';
-import { ChartBarIcon, HouseLineIcon, TrophyIcon } from '@phosphor-icons/react';
 
 
 export default function Navbar() {

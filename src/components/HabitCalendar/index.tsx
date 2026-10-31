@@ -1,20 +1,20 @@
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import  './Calendar.css';
+import  './HabitCalendar.module.css';
 import { useState } from "react";
 
-import type { MarkedDays } from '../../@types/habits'
+import type { HabitMarks } from '../../@types/habits'
 import { toKey } from '../../utils/date';
 
-export default function CalendarTracker() {
+export default function HabitCalendar() {
 
-    const [markedDays, setMarkedDays] = useState<MarkedDays>({});
+    const [markedDays, setMarkedDays] = useState<HabitMarks>([]);
 
     function handleDay(date: Date) {    
         const key = toKey(date.getFullYear(), date.getMonth(), date.getDate());
 
         setMarkedDays(prev => {
-            const updated = { ...prev, [key]: !prev[key] };
+            const updated = [...prev];
             return updated;
         });
     }

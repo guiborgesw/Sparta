@@ -9,6 +9,12 @@ export default function AddHabits() {
     const [habits, setHabits] = useState<Habit[]>([])
     const [newHabitText, setNewHabitText] = useState('')
 
+    useEffect(() => {
+        const storedHabits = JSON.stringify(habits)
+
+        localStorage.setItem('@sparta:habits-1.0.0', storedHabits)
+    }, [habits]);
+
     function handleCreateNewHabit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         if (!newHabitText.trim()) return
@@ -16,7 +22,6 @@ export default function AddHabits() {
         const newHabit: Habit = {
             id: crypto.randomUUID(),
             name: newHabitText,
-            done: false
         }
 
         setHabits([...habits, newHabit]);

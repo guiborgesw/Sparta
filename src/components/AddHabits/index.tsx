@@ -1,39 +1,26 @@
 import { RocketLaunch, Trash } from '@phosphor-icons/react'
 import styles from './AddHabits.module.css'
-import { useState, type FormEvent, type ChangeEvent, useEffect } from 'react'
+import { useState, type FormEvent, type ChangeEvent } from 'react'
 
-import type { Habit } from '../../@types/habits'
+import { useHabits } from '../../context/HabitsContext'
+import { toKey } from '../../utils/date'
 
 export default function AddHabits() {
-    
-    const [habits, setHabits] = useState<Habit[]>([])
+    const { habits, addHabit, removeHabit, toggleMark, isDone } = useHabits()
     const [newHabitText, setNewHabitText] = useState('')
 
-    useEffect(() => {
-        const storedHabits = JSON.stringify(habits)
-
-        localStorage.setItem('@sparta:habits-1.0.0', storedHabits)
-    }, [habits]);
+    const now = new Date()
+    const today = toKey(now.getFullYear(), now.getMonth(), now.getDate())
 
     function handleCreateNewHabit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        if (!newHabitText.trim()) return
 
-        const newHabit: Habit = {
-            id: crypto.randomUUID(),
-            name: newHabitText,
-        }
-
-        setHabits([...habits, newHabit]);
+        addHabit(newHabitText)
         setNewHabitText('');
     }
 
     function handleNewHabitChange(event: ChangeEvent<HTMLInputElement>) {
         setNewHabitText(event.target.value);
-    }
-
-    function handleDeleteHabit(index: number) {
-        setHabits(habits.filter((_, i) => i !== index));
     }
 
     return (
@@ -58,15 +45,18 @@ export default function AddHabits() {
 
             <section>
                 <div className={styles.listToDo}>
-                    {habits.map((habit, index) => (
-                        <div key={index}>
+                    {habits.map((habit) => (
+                        <div key={habit.id}>
                             <header className={styles.listContent}>
-                                <input type="checkbox"/>
+                                <input type="checkbox"
+                                    checked={isDone(habit.id, today)}
+                                    onChange={() => toggleMark(habit.id, today)}
+                                />
                                 <p>{habit.name}</p>
                                 <div className={styles.listLine}>
                                     <button 
                                         title="Deletar Hábito"
-                                        onClick={() => handleDeleteHabit(index)}
+                                        onClick={() => removeHabit(habit.id)}
                                     >
                                         <Trash size={24} />
                                     </button>

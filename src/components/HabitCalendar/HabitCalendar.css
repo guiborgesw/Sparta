@@ -51,17 +51,21 @@
 
 /* Células dos dias */
 .react-calendar__tile {
-    color: #333 !important;
+    color: var(--gray-500) !important;
     font-weight: bold !important;
     background: transparent;
     border-radius: 50%;
     aspect-ratio: 1;
 }
 
-.react-calendar__tile:hover {
+.react-calendar__tile:enabled:hover {
     background: var(--secondary-500) !important;
     color: var(--white) !important;
     border-radius: 50%;
+}
+
+.react-calendar__tile:disabled {
+    color: var(--gray-100) !important;
 }
 
 .react-calendar__tile.highlightDay {
@@ -69,4 +73,8 @@
     color: var(--white) !important;
     font-weight: bold !important;
     border-radius: 50%;
+}
+
+.calendarDisabled {
+    opacity: 0.5;
 }

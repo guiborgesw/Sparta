@@ -18,19 +18,30 @@ export function HabitsProvider({ children }: { children: ReactNode }) {
     const [marks, setMarks] = useState<HabitMarks>([])
 
     function addHabit(name: string) {
+        const trimmed = name.trim()
+        if (!trimmed) return
 
+        const habit: Habit = { id: crypto.randomUUID(), name: trimmed }
+        setHabits(prev => [...prev, habit])
     }
 
     function removeHabit(habitId: string) {
-
+        setHabits(prev => prev.filter(h => h.id !== habitId))
+        setMarks(prev => prev.filter(m => m.habitId !== habitId))
     }
 
     function toggleMark(habitId: string, day: string) {
+        setMarks(prev => {
+            const exists = prev.some(m => m.habitId === habitId && m.day === day)
 
+            return exists
+                ? prev.filter(m => !(m.habitId === habitId && m.day === day))
+                : [...prev, { habitId, day }]
+        }) 
     }
 
     function isDone(habitId: string, day: string) {
-        return false
+        return marks.some(m => m.habitId === habitId && m.day === day)
     }
 
     const value: HabitsContextValue = {

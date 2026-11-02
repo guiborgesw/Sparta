@@ -1,5 +1,5 @@
 import styles from './DailyQuote.module.css'
-import { quotes } from './Quotes'
+import { Quote } from '../../@types/quotes'
 
 function getDailyQuote() {
 
@@ -8,7 +8,7 @@ function getDailyQuote() {
   const dayOfYear = Math.floor(
     (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000
   );
-  return quotes[dayOfYear % quotes.length];
+  return Quote[dayOfYear % Quote.length];
 }
 
 export default function DailyQuote() {

@@ -84,3 +84,32 @@
     display: grid;
     grid-template-columns: 200px 2fr 200px;
 }  */
+
+/* Mesma regra da navbar: abaixo de ~1760px a composição original (40rem + 37.5rem
+   de margem) não cabe na tela. Aqui ela vira flexível; acima, fica intacta. */
+@media (max-width: 1759px) {
+    .pageContent {
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    .leftColumn {
+        width: 100%;
+        max-width: 24rem;
+        min-width: 0;
+    }
+
+    .rightColumn {
+        width: 100%;
+        max-width: 40rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .pageContent {
+        padding: 1.5rem 1rem;
+    }
+}

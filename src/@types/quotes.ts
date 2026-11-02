@@ -1,4 +1,9 @@
-export const quotes = [
+export type Quotes ={
+  text: string
+  author: string
+}
+
+export const Quote = [
   { "text": "Você não se eleva ao nível de seus objetivos, você cai ao nível de seus sistemas.", "author": "James Clear" },
   { "text": "Pequenos hábitos fazem uma grande diferença.", "author": "James Clear" },
   { "text": "A verdadeira mudança de comportamento é mudança de identidade.", "author": "James Clear" },

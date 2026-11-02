@@ -20,9 +20,17 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "test": "react-scripts test",
+    "test:ci": "react-scripts test --watchAll=false --passWithNoTests",
+    "test:coverage": "react-scripts test --watchAll=false --coverage --passWithNoTests",
+    "verify": "yarn typecheck && yarn lint && yarn test:ci && yarn build",
+    "verify:ci": "yarn typecheck && eslint src --ext .ts,.tsx --max-warnings=0 && yarn test:ci && yarn build",
+    "clean": "node -e \"require('fs').rmSync('build',{recursive:true,force:true})\"",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

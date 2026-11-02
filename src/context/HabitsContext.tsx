@@ -1,6 +1,7 @@
-import { createContext, useState, useContext } from 'react'
+import { createContext, useState, useContext, useEffect } from 'react'
 import type { ReactNode } from 'react'
 import type { Habit, HabitMarks } from '../@types/habits'
+import { loadHabits, loadMarks, saveHabits, saveMarks } from '../services/storage'
 
 export const HabitsContext = createContext<HabitsContextValue | null>(null)
 
@@ -14,8 +15,16 @@ export type HabitsContextValue = {
 }
 
 export function HabitsProvider({ children }: { children: ReactNode }) {
-    const [habits, setHabits] = useState<Habit[]>([])
-    const [marks, setMarks] = useState<HabitMarks>([])
+    const [habits, setHabits] = useState<Habit[]>(() => loadHabits())
+    const [marks, setMarks] = useState<HabitMarks>(() => loadMarks())
+
+    useEffect(() => {
+        saveHabits(habits)
+    }, [habits])
+
+    useEffect(() => {
+        saveMarks(marks)
+    }, [marks])
 
     function addHabit(name: string) {
         const trimmed = name.trim()

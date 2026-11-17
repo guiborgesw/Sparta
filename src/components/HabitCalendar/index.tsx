@@ -1,11 +1,11 @@
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import './HabitCalendar.css';
 import { useState } from "react";
 
 import type { Habit } from '../../@types/habits';
 import { toKey } from '../../utils/date';
 import { useHabits } from '../../context/HabitsContext';
+import { CalendarWrapper } from './styles';
 
 export default function HabitCalendar() {
     const { habits, toggleMark, isDone } = useHabits()
@@ -38,7 +38,7 @@ export default function HabitCalendar() {
                     <option value="">Adicione um hábito para começar</option>
                 )}
             </select>
-            <div className={!activeHabit ? 'calendarDisabled' : undefined}>
+            <CalendarWrapper $disabled={!activeHabit}>
                 <Calendar
                     locale="pt-BR"
                     onClickDay={handleDay}
@@ -49,7 +49,7 @@ export default function HabitCalendar() {
                     }}
                     maxDate={new Date()}
                 />
-            </div>
+            </CalendarWrapper>
         </section>
     )
 }

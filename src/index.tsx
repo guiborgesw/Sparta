@@ -1,14 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './global.css';
-import App from './App';
-import { HabitsProvider } from './context/HabitsContext';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import { HabitsProvider } from './context/HabitsContext'
+import { AppThemeProvider } from './styles/AppThemeProvider'
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
+const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(
   <React.StrictMode>
-    <HabitsProvider>
-      <App />
-    </HabitsProvider>
+    <AppThemeProvider>
+      <HabitsProvider>
+        <App />
+      </HabitsProvider>
+    </AppThemeProvider>
   </React.StrictMode>
-);
+)

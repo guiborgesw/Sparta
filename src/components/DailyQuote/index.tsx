@@ -1,5 +1,5 @@
-import styles from './DailyQuote.module.css'
 import { Quote } from '../../@types/quotes'
+import { QuoteBox } from './styles'
 
 function getDailyQuote() {
 
@@ -15,12 +15,12 @@ export default function DailyQuote() {
     const quote = getDailyQuote();
 
     return (
-        <div className={styles.dailyQuote}>
+        <QuoteBox>
             <span>Inspiração do Dia</span>
             <blockquote>
                 <p><strong>"{quote.text}"</strong></p>
                 <cite>— {quote.author}</cite>
             </blockquote>
-        </div>
+        </QuoteBox>
     )
 }

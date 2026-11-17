@@ -48,6 +48,7 @@ export const LeftColumn = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 5rem;
   gap: ${({ theme }) => theme.space[4]};
   flex-shrink: 0;
 
@@ -62,7 +63,8 @@ export const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
   width: 40rem;
-  margin-right: 5rem;
+  margin-left: auto;
+  margin-right: 45rem;
   background-color: ${({ theme }) => theme.colors.brand};
   border-radius: ${({ theme }) => theme.radii.md};
 

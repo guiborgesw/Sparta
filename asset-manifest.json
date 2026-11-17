@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Sparta/static/css/main.2d8c30d5.css",
-    "main.js": "/Sparta/static/js/main.079fb1c6.js",
+    "main.css": "/Sparta/static/css/main.ff1b84b8.css",
+    "main.js": "/Sparta/static/js/main.257a85f7.js",
     "static/media/Logo_Sparta.png": "/Sparta/static/media/Logo_Sparta.953f6b063001e3280854.png",
     "index.html": "/Sparta/index.html",
-    "main.2d8c30d5.css.map": "/Sparta/static/css/main.2d8c30d5.css.map",
-    "main.079fb1c6.js.map": "/Sparta/static/js/main.079fb1c6.js.map"
+    "main.ff1b84b8.css.map": "/Sparta/static/css/main.ff1b84b8.css.map",
+    "main.257a85f7.js.map": "/Sparta/static/js/main.257a85f7.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d8c30d5.css",
-    "static/js/main.079fb1c6.js"
+    "static/css/main.ff1b84b8.css",
+    "static/js/main.257a85f7.js"
   ]
 }

@@ -1,5 +1,3 @@
-import styles from './Evolution.module.css'
-
 export default function Evolution() {
     return(
         <div>

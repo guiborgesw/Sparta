@@ -1,32 +1,29 @@
-import styles from './Navbar.module.css';
 import Sparta from '../../assets/Logo_Sparta.png';
-import { Link } from 'react-router-dom';
+import { IconImage, Item, ItemList, Nav, NavLink } from './styles';
 
 
 export default function Navbar() {
     return (
-        <nav className={styles.navbar}>
-            <ul className={styles.navList}>
-                <img className={styles.iconImage} src={Sparta} alt="Website Icon"/>
+        <Nav>
+            <IconImage src={Sparta} alt="Website Icon" />
 
-                <div className={styles.itemList}>
-                    <li className={styles.item}>
-                        <Link to="/">
-                           Home
-                        </Link>
-                    </li>
-                    <li className={styles.item}>
-                        <Link to="/evolution">
-                            Evolução
-                        </Link>
-                    </li>
-                    <li className={styles.item}>
-                        <Link to="/ranking">
-                            Ranking
-                        </Link>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+            <ItemList>
+                <Item>
+                    <NavLink to="/">
+                       Home
+                    </NavLink>
+                </Item>
+                <Item>
+                    <NavLink to="/evolution">
+                        Evolução
+                    </NavLink>
+                </Item>
+                <Item>
+                    <NavLink to="/ranking">
+                        Ranking
+                    </NavLink>
+                </Item>
+            </ItemList>
+        </Nav>
     )
 }

@@ -62,16 +62,9 @@ export const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
   width: 40rem;
-  margin-left: auto;
-  margin-right: 37.5rem;
+  margin-right: 5rem;
   background-color: ${({ theme }) => theme.colors.brand};
   border-radius: ${({ theme }) => theme.radii.md};
-
-  h2 {
-    color: ${({ theme }) => theme.colors.white};
-    text-align: center;
-    padding: ${({ theme }) => theme.space[3]};
-  }
 
   ${down('xl')} {
     width: 100%;
